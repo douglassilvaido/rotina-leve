@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rotina Leve: guia prático de alimentação e organização da rotina, receitas e ferramentas para o dia a dia."><title>Rotina Leve — Kit Digital</title><style>
+:root{--green:#193e2c;--sage:#768b66;--earth:#b6552e;--cream:#faf6ed;--dark:#20352a;--line:#ddd9ca}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--dark);background:var(--cream);line-height:1.58}.wrap{width:min(1140px,92%);margin:auto}h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.15;color:var(--green)}h1{font-size:clamp(2.6rem,5vw,4.9rem);margin:16px 0}h2{font-size:clamp(1.95rem,3.2vw,3rem);margin:0 0 22px}h3{font-size:1.25rem;margin:0 0 7px}p{margin:10px 0 16px}header{background:#fffdf7;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:4}nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-family:Georgia,serif;font-size:1.65rem;font-weight:700;color:var(--green);text-decoration:none}.logo span{color:var(--earth)}nav a.inline{text-decoration:none;color:var(--green);font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;background:var(--earth);color:white;padding:14px 24px;border-radius:40px;text-decoration:none;font-weight:700;border:0;cursor:pointer}.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b6552e;outline-offset:3px}.btn:hover{background:#923f23}.eyebrow{font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;color:var(--earth);font-weight:800}.hero{background:linear-gradient(130deg,#f6f1e5,#e7ecdf);padding:63px 0 67px}.hero-grid{display:grid;grid-template-columns:1fr 1.14fr;gap:34px;align-items:center}.lead{font-size:1.2rem;max-width:560px}.hero-img{width:100%;border-radius:18px;box-shadow:0 16px 44px #13361d25}.chips{display:flex;gap:9px;flex-wrap:wrap;margin:21px 0 26px}.chips span{border:1px solid #9ba991;border-radius:30px;background:#ffffff93;padding:5px 12px;font-size:.9rem}section{padding:68px 0}.intro{max-width:750px;font-size:1.12rem}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.feature{border:1px solid var(--line);border-radius:15px;padding:23px;background:#fffef9}.feature-icon{font-size:1.6rem;margin-bottom:8px}.materials{background:#eaf0e6}.material-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.material{background:#fffdf7;border-radius:14px;overflow:hidden;border:1px solid #d4dece;box-shadow:0 7px 22px #132b1d11}.material img{width:100%;height:235px;object-fit:contain;background:#f4f1e8;display:block}.material>div{padding:14px 16px 19px}.material-number{font-size:.7rem;letter-spacing:.1em;color:var(--earth);font-weight:800}.material p{font-size:.88rem;margin:5px 0 0}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:36px}.panel{padding:24px 28px;background:white;border:1px solid var(--line);border-radius:16px}ul{padding-left:23px}li{padding:5px 0}.offer{background:#17432f;color:#f8f9f3}.offer h2,.offer h3{color:#fff}.offerbox{border:1px solid #b6c8ac66;border-radius:18px;padding:34px;background:#ffffff12;max-width:730px;margin:auto;text-align:center}.price{font-size:2.5rem;font-weight:800;margin:13px 0;color:white}.notice{font-size:.88rem;color:#e4ebe0}.offerbox .btn{margin:14px 0}details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-weight:700;color:var(--green)}footer{padding:34px 0;background:#123222;color:#d5e3d8;font-size:.85rem}footer p{max-width:920px}.small{font-size:.9rem}@media(max-width:850px){.hero-grid,.two-col{grid-template-columns:1fr}.material-grid{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:1fr}.hero{padding:36px 0}section{padding:47px 0}}@media(max-width:440px){.material-grid{grid-template-columns:1fr 1fr;gap:8px}.material img{height:170px}.material>div{padding:10px}.material h3{font-size:1.04rem}.material p{font-size:.78rem}nav a.inline{display:none}}
+</style>
+<script>
+(function () {
+  const PIXEL_ID = '1710731830855562';
+  const CONSENT_KEY = 'rotina_leve_meta_consent_v1';
+
+  function loadMetaPixel() {
+    if (window.fbq) return;
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq)return;
+      n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch(e) {}
+    document.getElementById('pixel-consent-banner').hidden = true;
+    if (value === 'accepted') loadMetaPixel();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('pixel-consent-banner');
+    let consent = null;
+    try { consent = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+    if (consent === 'accepted') loadMetaPixel();
+    else if (consent !== 'declined') banner.hidden = false;
+
+    document.getElementById('pixel-accept').addEventListener('click', function() {
+      setConsent('accepted');
+    });
+    document.getElementById('pixel-decline').addEventListener('click', function() {
+      setConsent('declined');
+    });
+    document.getElementById('pixel-preferences').addEventListener('click', function() {
+      banner.hidden = false;
+    });
+  });
+})();
+</script>
+
+<style>
+#pixel-consent-banner[hidden] { display:none !important; }
+#pixel-consent-banner { position:fixed; z-index:9999; bottom:16px; left:16px; right:16px; max-width:680px; margin:auto; background:#fffdf7; color:#243d32; border:1px solid #b9c8b5; border-radius:14px; padding:16px 18px; box-shadow:0 8px 30px rgba(0,0,0,.17); font:14px/1.5 system-ui,sans-serif; }
+#pixel-consent-banner p { margin:0 0 10px; }
+#pixel-consent-banner .cookie-actions { display:flex; flex-wrap:wrap; gap:8px; }
+#pixel-consent-banner button { cursor:pointer; border-radius:8px; border:1px solid #285641; padding:9px 14px; font:600 14px system-ui,sans-serif; }
+#pixel-accept { background:#285641; color:white; }
+#pixel-decline { background:white; color:#285641; }
+#pixel-preferences { background:transparent; border:0; padding:4px; text-decoration:underline; color:inherit; cursor:pointer; }
+</style>
+</head><body>
+<header><nav class="wrap"><a class="logo" href="#inicio">Rotina <span>Leve</span></a><a class="inline" href="#materiais">Conheça o kit</a><a class="btn" href="https://pay.cakto.com.br/icrpamd_1232148" target="_blank" rel="noopener noreferrer">Comprar o kit</a></nav></header>
+<main id="inicio"><div class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Kit digital • Organização alimentar</div><h1>Uma rotina alimentar mais simples começa com organização.</h1><p class="lead">Ideias práticas para planejar refeições, organizar compras e experimentar novos hábitos, respeitando seus horários e preferências.</p><div class="chips"><span>8 materiais em PDF</span><span>28 receitas ilustradas</span><span>Planejamento flexível</span></div><a href="https://pay.cakto.com.br/icrpamd_1232148" target="_blank" rel="noopener noreferrer" class="btn">Quero meu Kit Rotina Leve →</a><p class="small">Conteúdo educativo e de organização, sem cardápios obrigatórios.</p></div><div><img class="hero-img" src="./assets/mockup-kit.png" alt="Montagem com as capas reais dos oito materiais do kit Rotina Leve"></div></div></div>
+<section><div class="wrap"><div class="eyebrow">Para o seu dia a dia</div><h2>Menos improviso, mais possibilidades.</h2><p class="intro">Você não precisa reorganizar tudo de uma vez. O Rotina Leve reúne ferramentas para facilitar decisões comuns do cotidiano: o que preparar, o que comprar e como aproveitar melhor o que está disponível.</p><div class="feature-grid"><article class="feature"><div class="feature-icon">🥕</div><h3>Ideias para refeições</h3><p>28 preparações ilustradas, com ingredientes, passo a passo e sugestões culinárias de adaptação.</p></article><article class="feature"><div class="feature-icon">🗓️</div><h3>Organização flexível</h3><p>Planejadores e listas para escolher o que faz sentido na sua semana — sem preencher tudo.</p></article><article class="feature"><div class="feature-icon">🌿</div><h3>Pequenas ações</h3><p>Atividades simples para observar o que facilita sua rotina e ajustar o planejamento.</p></article></div></div></section>
+<section class="materials" id="materiais"><div class="wrap"><div class="eyebrow">Conteúdo do kit</div><h2>Oito PDFs para consultar quando precisar</h2><p class="intro">As imagens abaixo mostram as capas e primeiras páginas reais dos materiais incluídos no kit.</p><div class="material-grid"><article class="material"><img loading="lazy" alt="Prévia do PDF Comece Aqui" src="./assets/capa-00.jpg"><div><span class="material-number">00</span><h3>Comece Aqui</h3><p>Orientações para começar</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Guia Principal" src="./assets/capa-01.jpg"><div><span class="material-number">01</span><h3>Guia Principal</h3><p>8 capítulos sobre alimentação e organização</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Livro de Receitas" src="./assets/capa-02.jpg"><div><span class="material-number">02</span><h3>Livro de Receitas</h3><p>28 preparações ilustradas</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Planejador Semanal" src="./assets/capa-03.jpg"><div><span class="material-number">03</span><h3>Planejador Semanal</h3><p>Organização flexível da semana</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Lista de Compras" src="./assets/capa-04.jpg"><div><span class="material-number">04</span><h3>Lista de Compras</h3><p>Compras com mais clareza</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Ficha de Hábitos" src="./assets/capa-05.jpg"><div><span class="material-number">05</span><h3>Ficha de Hábitos</h3><p>Acompanhamento sem cobranças</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Substituições Práticas" src="./assets/capa-06.jpg"><div><span class="material-number">06</span><h3>Substituições Práticas</h3><p>Alternativas culinárias</p></div></article>
+<article class="material"><img loading="lazy" alt="Prévia do PDF Organização em 7 Dias" src="./assets/capa-07.jpg"><div><span class="material-number">07</span><h3>Organização em 7 Dias</h3><p>Pequenas ações passo a passo</p></div></article></div></div></section>
+<section><div class="wrap two-col"><div><div class="eyebrow">Como usar</div><h2>Comece pelo que faz sentido para você.</h2><p>Se falta inspiração para cozinhar, abra o Livro de Receitas. Se o desafio são compras repetidas ou esquecidas, utilize a Lista de Compras. Se quer organizar dois ou três momentos da semana, experimente o Planejador.</p><p>Você pode consultar os materiais separadamente, voltar a uma atividade e adaptar tudo à sua rotina.</p></div><div class="panel"><h3>Este kit pode ajudar quem…</h3><ul><li>Tem dias corridos e procura ideias de refeições.</li><li>Quer planejar compras com mais clareza.</li><li>Deseja usar melhor os ingredientes disponíveis.</li><li>Prefere ferramentas simples a regras rígidas.</li><li>Quer experimentar pequenos hábitos de organização.</li></ul><p class="small">Não é uma dieta personalizada nem um programa de resultados físicos.</p></div></div></section>
+<section class="offer" id="oferta"><div class="wrap"><div class="offerbox"><div class="eyebrow" style="color:#eeb18d">Oferta disponível na Cakto</div><h2>Kit Rotina Leve</h2><p>Oito materiais digitais para apoiar a organização alimentar, com leitura e impressão conforme sua preferência.</p><div class="price">R$ 19,90</div><p class="notice">Preço do produto: R$ 19,90. A Cakto apresenta taxa de serviço de R$ 0,99 no checkout, totalizando R$ 20,89 nas condições consultadas. Confirme o total antes de pagar.</p><a class="btn" href="https://pay.cakto.com.br/icrpamd_1232148" target="_blank" rel="noopener noreferrer">Quero meu Kit Rotina Leve →</a><p class="notice">Pagamento processado com segurança no checkout da Cakto.</p></div></div></section>
+<section id="duvidas"><div class="wrap"><div class="eyebrow">Perguntas frequentes</div><h2>Antes de escolher</h2><details><summary>O conteúdo é uma dieta ou prescrição nutricional?</summary><p>Não. O kit é educativo e voltado à organização das refeições e da rotina. Não substitui acompanhamento individualizado.</p></details><details><summary>Preciso seguir todas as atividades?</summary><p>Não. Os materiais são independentes e podem ser preenchidos apenas onde forem úteis.</p></details><details><summary>O Livro de Receitas tem fotografias?</summary><p>Sim, as 28 receitas possuem imagens ilustrativas geradas por inteligência artificial; elas não representam receitas necessariamente testadas.</p></details><details><summary>Em que formato recebo os materiais?</summary><p>O kit foi preparado em oito arquivos PDF. A compra é processada pela Cakto. Verifique as instruções de acesso configuradas no produto após o pagamento.</p></details><details><summary>Este kit serve para necessidades alimentares específicas?</summary><p>Não oferece ajustes individualizados para alergias, intolerâncias ou outras condições de saúde. Consulte um profissional habilitado quando necessário.</p></details></div></section>
+<section id="privacidade"><div class="wrap">
+<h2>Privacidade e rastreamento</h2>
+<p>Este site utiliza o Pixel da Meta somente após seu consentimento para cookies de publicidade. Quando autorizado, a Meta pode receber informações sobre sua visita à página, conforme suas próprias políticas. Você pode recusar esse rastreamento e continuar navegando normalmente.</p>
+<p>Para alterar sua escolha, clique em <button type="button" id="pixel-preferences">Preferências de cookies</button>. O pagamento e o tratamento dos dados de compra são realizados no ambiente da Cakto, sujeito às políticas aplicáveis da plataforma.</p>
+<p class="small">Esta seção resume o rastreamento deste site e não substitui uma política de privacidade completa com identificação e contato do responsável pelo produto.</p>
+</div></section>
+</main>
+<footer><div class="wrap"><strong>Rotina Leve</strong><p>Material educativo sobre organização alimentar. Não substitui orientação médica ou nutricional, não constitui prescrição ou tratamento e não promete perda de peso. Tempos e rendimentos do Livro de Receitas são estimativas. Fotografias culinárias ilustrativas, geradas por IA.</p></div></footer>
+
+<div id="pixel-consent-banner" hidden role="dialog" aria-label="Preferências de cookies">
+  <p><strong>Cookies de publicidade</strong></p>
+  <p>Com sua autorização, usamos o Pixel da Meta para medir visitas e melhorar nossas campanhas. Você pode recusar sem impedir o acesso à página. <a href="#privacidade">Saiba mais</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" id="pixel-decline">Recusar</button>
+    <button type="button" id="pixel-accept">Aceitar</button>
+  </div>
+</div>
+</body></html>
